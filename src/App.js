@@ -44,7 +44,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (charge !== "" && amount > 0) {
+    if (charge.trim() !== "" && amount > 0) {
       if (edit) {
         let editedExpenses = expenses.map((expense) => {
           return expense.id === id ? { ...expense, charge, amount } : expense;
@@ -69,6 +69,9 @@ function App() {
 
   const clearExpenses = () => {
     setExpenses([]);
+    setEdit(false);
+    setCharge("");
+    setAmount("");
     handleAlert({ type: "danger", text: "All Expenses Deleted" });
   };
 

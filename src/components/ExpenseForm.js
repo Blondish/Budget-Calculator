@@ -29,6 +29,8 @@ const ExpenseForm = ({
           <input
             type="number"
             className="form-control"
+            min="0"
+            max="10000000"
             id="amount"
             name="amount"
             placeholder="e.g. 300"
